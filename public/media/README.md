@@ -19,8 +19,6 @@ image icon.
 
 - `photos/hero.jpg` — hero background image (used behind the hero video)
 - `videos/hero.mp4` — hero background video
-- `photos/timeline-1.jpg` … `timeline-4.jpg` — timeline entries
-- `photos/gallery-1.jpg` … `gallery-6.jpg` — photo gallery row
 - `videos/clip-1.mp4` … `clip-3.mp4` + matching `photos/video-poster-1.jpg` … `video-poster-3.jpg` — video gallery
 
 ## SideQuest — `/public/media/sidequest/`
