@@ -12,7 +12,7 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
   const [showSkip, setShowSkip] = useState(false);
 
   useEffect(() => {
-    const autoExit = setTimeout(() => setExiting(true), 4100);
+    const autoExit = setTimeout(() => setExiting(true), 3600);
     const skipTimer = setTimeout(() => setShowSkip(true), 900);
     return () => {
       clearTimeout(autoExit);
@@ -50,11 +50,11 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
       <motion.div
         initial={{ scaleY: 0, opacity: 0 }}
         animate={{ scaleY: [0, 1, 0], opacity: [0, 1, 0] }}
-        transition={{ duration: 0.7, delay: 0.25, times: [0, 0.5, 1], ease: "easeInOut" }}
+        transition={{ duration: 0.7, delay: 0.2, times: [0, 0.5, 1], ease: "easeInOut" }}
         className="absolute w-[3px] h-full bg-gradient-to-b from-transparent via-ember to-transparent"
       />
 
-      <LightFlash delay={0.95} />
+      <LightFlash delay={0.45} />
 
       <LogoReveal />
 
