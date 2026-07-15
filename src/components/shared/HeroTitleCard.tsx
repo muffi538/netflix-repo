@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import PlaceholderImage from "./PlaceholderImage";
 import PlaceholderVideo from "./PlaceholderVideo";
 import MyListButton from "./MyListButton";
+import VideoPlayerModal from "./VideoPlayerModal";
 
 interface HeroTitleCardProps {
   id: string;
@@ -13,7 +15,6 @@ interface HeroTitleCardProps {
   image: string;
   video?: string;
   accent: string;
-  playHref?: string;
 }
 
 const PlayIcon = () => (
@@ -32,8 +33,9 @@ export default function HeroTitleCard({
   image,
   video,
   accent,
-  playHref = "#episodes",
 }: HeroTitleCardProps) {
+  const [playerOpen, setPlayerOpen] = useState(false);
+
   return (
     <section className="relative h-[100vh] min-h-[620px] w-full overflow-hidden flex items-end">
       <div className="absolute inset-0">
@@ -110,18 +112,26 @@ export default function HeroTitleCard({
           transition={{ delay: 0.75, duration: 0.6 }}
           className="flex flex-wrap items-center gap-3 mt-8"
         >
-          <motion.a
-            href={playHref}
+          <motion.button
+            onClick={() => setPlayerOpen(true)}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-7 py-3 rounded-md bg-white text-black font-bold text-sm hover:bg-white/85 transition-colors"
           >
             <PlayIcon />
             Play
-          </motion.a>
+          </motion.button>
           <MyListButton id={id} />
         </motion.div>
       </div>
+
+      <VideoPlayerModal
+        open={playerOpen}
+        onClose={() => setPlayerOpen(false)}
+        video={video}
+        image={image}
+        title={title}
+      />
     </section>
   );
 }

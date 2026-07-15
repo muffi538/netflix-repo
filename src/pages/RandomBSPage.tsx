@@ -42,7 +42,6 @@ export default function RandomBSPage() {
           badges={randombsHero.badges}
           image={randombsHero.image}
           accent={ACCENT}
-          playHref="#gallery"
         />
         <FloatingStickers stickers={stickers} avoidBottomLeft />
       </div>
