@@ -13,6 +13,7 @@ interface PlaceholderImageProps {
   priority?: boolean;
   hideIcon?: boolean;
   placeholderBackground?: string;
+  onLoad?: () => void;
 }
 
 const ImageIcon = () => (
@@ -33,6 +34,7 @@ export default function PlaceholderImage({
   priority = false,
   hideIcon = false,
   placeholderBackground,
+  onLoad,
 }: PlaceholderImageProps) {
   const { ref, inView } = useInView<HTMLDivElement>();
   const [loaded, setLoaded] = useState(false);
@@ -58,7 +60,10 @@ export default function PlaceholderImage({
           src={src}
           alt={alt}
           loading={priority ? "eager" : "lazy"}
-          onLoad={() => setLoaded(true)}
+          onLoad={() => {
+            setLoaded(true);
+            onLoad?.();
+          }}
           onError={() => setFailed(true)}
           initial={{ opacity: 0 }}
           animate={{ opacity: loaded ? 1 : 0 }}

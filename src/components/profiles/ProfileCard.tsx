@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { Profile } from "@/data/profiles";
 import PlaceholderImage from "@/components/shared/PlaceholderImage";
@@ -10,6 +10,8 @@ interface ProfileCardProps {
 }
 
 const ProfileCard = forwardRef<HTMLButtonElement, ProfileCardProps>(({ profile, index, onSelect }, ref) => {
+  const [photoLoaded, setPhotoLoaded] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -38,14 +40,17 @@ const ProfileCard = forwardRef<HTMLButtonElement, ProfileCardProps>(({ profile, 
           hideIcon
           placeholderBackground={`linear-gradient(155deg, ${profile.accent} 0%, ${profile.accent}cc 55%, #000 140%)`}
           className="absolute inset-0 w-full h-full rounded-[26%] ring-1 ring-white/15 group-hover:ring-white/40 transition-all"
+          onLoad={() => setPhotoLoaded(true)}
         />
 
-        <div
-          className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl pointer-events-none"
-          style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.35))" }}
-        >
-          {profile.emoji}
-        </div>
+        {!photoLoaded && (
+          <div
+            className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl pointer-events-none"
+            style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.35))" }}
+          >
+            {profile.emoji}
+          </div>
+        )}
       </motion.button>
 
       <div className="text-center">
