@@ -20,7 +20,7 @@ image icon.
 - `photos/hero.jpg` — hero background image (used behind the hero video)
 - `videos/hero.mp4` — hero background video
 - `photos/timeline-1.jpg` … `timeline-4.jpg` — timeline entries
-- `photos/gallery-1.jpg` … `gallery-6.jpg` — photo gallery grid
+- `photos/gallery-1.jpg` … `gallery-6.jpg` — photo gallery row
 - `videos/clip-1.mp4` … `clip-3.mp4` + matching `photos/video-poster-1.jpg` … `video-poster-3.jpg` — video gallery
 
 ## SideQuest — `/public/media/sidequest/`
@@ -33,6 +33,7 @@ image icon.
 
 ## Random BS — `/public/media/randombs/`
 
+- `photos/hero.jpg` — hero background image
 - `photos/masonry-1.jpg` … `masonry-8.jpg` — masonry gallery
 - `photos/meme-1.jpg` … `meme-4.jpg` — meme cards (also reused in the rotating card stack)
 - `videos/clip-1.mp4`, `clip-2.mp4` + posters — video gallery

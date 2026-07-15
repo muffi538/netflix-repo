@@ -1,11 +1,21 @@
-import type { TimelineItem, GalleryItem, VideoItem, QuoteItem } from "./types";
+import type { TimelineItem, GalleryItem, VideoItem, QuoteItem, StatItem } from "./types";
 
 export const birthdayHero = {
   image: "/media/birthday/photos/hero.jpg",
   video: "/media/birthday/videos/hero.mp4",
+  eyebrow: "Memory Series",
   title: "Birthday Shi",
   subtitle: "Cake, candles, chaos, and everyone we love in one room.",
+  featuring: "The whole crew, way too much cake, one questionable playlist",
+  badges: ["4 Chapters", "🎂 All Ages", "Rewatch Value: High"],
 };
+
+export const birthdayStats: StatItem[] = [
+  { id: "bs-1", label: "Candles Blown", value: 24 },
+  { id: "bs-2", label: "Slices of Cake", value: 18 },
+  { id: "bs-3", label: "Photos Taken", value: 86 },
+  { id: "bs-4", label: "Times “Make a Wish” Was Said", value: 7 },
+];
 
 export const birthdayTimeline: TimelineItem[] = [
   { id: "bt-1", date: "The Countdown", title: "Planning the Chaos", description: "Group chats blowing up, secret plans, and someone always almost spoiling it.", image: "/media/birthday/photos/timeline-1.jpg" },

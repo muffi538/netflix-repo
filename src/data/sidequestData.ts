@@ -1,10 +1,20 @@
-import type { TimelineItem, VideoItem, TravelCard, GalleryItem } from "./types";
+import type { TimelineItem, VideoItem, TravelCard, GalleryItem, StatItem } from "./types";
 
 export const sidequestHero = {
   image: "/media/sidequest/photos/hero.jpg",
+  eyebrow: "Memory Series",
   title: "SideQuest",
   subtitle: "Not every plan needs a plan. Every detour worth taking.",
+  featuring: "One half-charged phone, zero working plans, the crew",
+  badges: ["4 Stops", "🌍 Adventure", "Rewatch Value: High"],
 };
+
+export const sidequestStats: StatItem[] = [
+  { id: "ss-1", label: "Wrong Turns", value: 6 },
+  { id: "ss-2", label: "Miles Covered", value: 92 },
+  { id: "ss-3", label: "Diner Pancakes", value: 14 },
+  { id: "ss-4", label: "Times We Got Lost On Purpose", value: 5 },
+];
 
 export const sidequestTimeline: TimelineItem[] = [
   { id: "st-1", date: "Stop 01", title: "Wrong Turn, Right Choice", description: "We took the wrong exit and found the best view of the trip.", image: "/media/sidequest/photos/timeline-1.jpg" },

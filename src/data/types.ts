@@ -40,3 +40,17 @@ export interface MemeCard {
   caption: string;
   rotation?: number;
 }
+
+export interface StatItem {
+  id: string;
+  label: string;
+  value: number;
+  suffix?: string;
+}
+
+export interface QuizQuestion {
+  id: string;
+  question: string;
+  yesResponse: string;
+  noResponse: string;
+}

@@ -1,9 +1,26 @@
-import type { GalleryItem, MemeCard, VideoItem } from "./types";
+import type { GalleryItem, MemeCard, VideoItem, StatItem, QuizQuestion } from "./types";
 
 export const randombsHero = {
+  image: "/media/randombs/photos/hero.jpg",
+  eyebrow: "Memory Series",
   title: "Random BS",
   subtitle: "Chaotic. Unfiltered. Absolutely no context needed.",
+  featuring: "Everyone who said \"delete that\" and nobody who listened",
+  badges: ["Unrated", "😂 Chaos Certified", "Rewatch Value: Dangerously High"],
 };
+
+export const randombsStats: StatItem[] = [
+  { id: "rs-1", label: "Things We Regret", value: 11 },
+  { id: "rs-2", label: "Group Chat Messages", value: 99, suffix: "+" },
+  { id: "rs-3", label: "Screenshots Taken", value: 47 },
+  { id: "rs-4", label: "Times “Delete That” Was Said", value: 22 },
+];
+
+export const quizQuestions: QuizQuestion[] = [
+  { id: "qq-1", question: "Do you remember why this photo exists?", yesResponse: "Liar. Nobody remembers.", noResponse: "Honestly, same." },
+  { id: "qq-2", question: "Was this our best idea or worst idea?", yesResponse: "There was no in-between, apparently.", noResponse: "Correct answer." },
+  { id: "qq-3", question: "Would you do it all again?", yesResponse: "Obviously. In a heartbeat.", noResponse: "Sure you wouldn't." },
+];
 
 export const masonryGallery: GalleryItem[] = [
   { id: "mg-1", src: "/media/randombs/photos/masonry-1.jpg", caption: "no comment", span: "lg" },

@@ -1,11 +1,21 @@
-import type { TimelineItem, GalleryItem, QuoteItem } from "./types";
+import type { TimelineItem, GalleryItem, QuoteItem, StatItem } from "./types";
 
 export const missyouHero = {
   image: "/media/missyou/photos/hero.jpg",
   video: "/media/missyou/videos/hero.mp4",
+  eyebrow: "Final Episode",
   title: "I Am Gon Miss U A Lot",
   subtitle: "For every moment that mattered, and every one still to come.",
+  featuring: "You, me, and every version of us that got us here",
+  badges: ["Final Chapter", "❤️ All The Feels", "Rewatch Value: Immeasurable"],
 };
+
+export const missyouStats: StatItem[] = [
+  { id: "ms-1", label: "Years Of This", value: 5 },
+  { id: "ms-2", label: "Memories Made", value: 99, suffix: "+" },
+  { id: "ms-3", label: "Inside Jokes", value: 41 },
+  { id: "ms-4", label: "Times It Was Worth It", value: 100, suffix: "%" },
+];
 
 export const missyouTimeline: TimelineItem[] = [
   { id: "mt-1", date: "The Beginning", title: "Where It Started", description: "None of us knew what this would turn into.", image: "/media/missyou/photos/timeline-1.jpg" },

@@ -1,10 +1,12 @@
-import BackButton from "@/components/shared/BackButton";
+import TopNav from "@/components/shared/TopNav";
 import SectionHeader from "@/components/shared/SectionHeader";
-import Timeline from "@/components/shared/Timeline";
+import EpisodeList from "@/components/shared/EpisodeList";
+import StatBar from "@/components/shared/StatBar";
+import ScrollRow from "@/components/shared/ScrollRow";
+import PhotoRowCard from "@/components/shared/PhotoRowCard";
 import QuoteCard from "@/components/shared/QuoteCard";
-import PhotoGallery from "@/components/shared/PhotoGallery";
 import FloatingParticles from "@/components/shared/FloatingParticles";
-import MissYouHero from "@/components/sections/missyou/MissYouHero";
+import HeroTitleCard from "@/components/shared/HeroTitleCard";
 import LetterSection from "@/components/sections/missyou/LetterSection";
 import ClosingMessage from "@/components/sections/missyou/ClosingMessage";
 import {
@@ -13,33 +15,49 @@ import {
   missyouLetter,
   missyouQuotes,
   missyouGallery,
+  missyouStats,
 } from "@/data/missyouData";
 
 const ACCENT = "#e50914";
+const TABS = [
+  { id: "episodes", label: "The Journey" },
+  { id: "letter", label: "The Letter" },
+  { id: "gallery", label: "Gallery" },
+];
 
 export default function MissYouPage() {
   return (
     <div className="relative bg-black min-h-screen">
-      <BackButton />
+      <TopNav accent={ACCENT} profileEmoji="❤️" tabs={TABS} />
 
-      <MissYouHero
-        image={missyouHero.image}
-        video={missyouHero.video}
+      <HeroTitleCard
+        id="missyou"
+        eyebrow={missyouHero.eyebrow}
         title={missyouHero.title}
         subtitle={missyouHero.subtitle}
+        featuring={missyouHero.featuring}
+        badges={missyouHero.badges}
+        image={missyouHero.image}
+        video={missyouHero.video}
+        accent={ACCENT}
       />
 
-      <section className="relative px-6 md:px-16 py-24 max-w-6xl mx-auto">
+      <section id="episodes" className="relative px-5 md:px-10 py-20 md:py-24 max-w-6xl mx-auto scroll-mt-20">
         <SectionHeader eyebrow="The Journey" title="Every Chapter" />
-        <Timeline items={missyouTimeline} accent={ACCENT} />
+        <EpisodeList items={missyouTimeline} accent={ACCENT} />
       </section>
 
-      <section className="relative px-6 md:px-16 py-24">
+      <section className="relative px-5 md:px-10 py-16 max-w-6xl mx-auto">
+        <SectionHeader eyebrow="By The Numbers" title="What We Built" />
+        <StatBar stats={missyouStats} accent={ACCENT} />
+      </section>
+
+      <section id="letter" className="relative px-5 md:px-10 py-20 md:py-24 scroll-mt-20">
         <SectionHeader eyebrow="One Last Thing" title="A Letter" align="center" />
         <LetterSection letter={missyouLetter} />
       </section>
 
-      <section className="relative px-6 md:px-16 py-24 max-w-5xl mx-auto">
+      <section className="relative px-5 md:px-10 py-20 md:py-24 max-w-5xl mx-auto">
         <SectionHeader eyebrow="In Their Words" title="What Stays With Us" align="center" />
         <div className="grid md:grid-cols-3 gap-6">
           {missyouQuotes.map((q, i) => (
@@ -48,9 +66,17 @@ export default function MissYouPage() {
         </div>
       </section>
 
-      <section className="relative px-6 md:px-16 py-24 max-w-6xl mx-auto">
-        <SectionHeader eyebrow="Forever" title="The Final Gallery" />
-        <PhotoGallery items={missyouGallery} accent={ACCENT} />
+      <section id="gallery" className="relative py-20 md:py-24 scroll-mt-20">
+        <div className="max-w-6xl mx-auto px-5 md:px-10">
+          <SectionHeader eyebrow="Forever" title="The Final Gallery" />
+        </div>
+        <div className="pl-5 md:pl-10 pr-5 md:pr-10">
+          <ScrollRow accent={ACCENT}>
+            {missyouGallery.map((item) => (
+              <PhotoRowCard key={item.id} item={item} accent={ACCENT} />
+            ))}
+          </ScrollRow>
+        </div>
       </section>
 
       <div className="relative">

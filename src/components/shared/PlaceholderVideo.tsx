@@ -29,11 +29,12 @@ export default function PlaceholderVideo({
 }: PlaceholderVideoProps) {
   const { ref, inView } = useInView<HTMLDivElement>();
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(autoPlayMuted);
   const [failed, setFailed] = useState(false);
   const [ready, setReady] = useState(false);
 
   const togglePlay = () => {
+    if (autoPlayMuted) return;
     const el = videoRef.current;
     if (!el || failed) return;
     if (el.paused) {
@@ -48,7 +49,7 @@ export default function PlaceholderVideo({
   return (
     <div
       ref={ref}
-      className={cn("relative overflow-hidden bg-charcoal group cursor-pointer", className)}
+      className={cn("relative overflow-hidden bg-charcoal group", !autoPlayMuted && "cursor-pointer", className)}
       onClick={togglePlay}
     >
       {poster && !ready ? (
@@ -67,6 +68,7 @@ export default function PlaceholderVideo({
           poster={poster}
           muted={autoPlayMuted}
           loop={autoPlayMuted}
+          autoPlay={autoPlayMuted}
           playsInline
           preload="none"
           onCanPlay={() => setReady(true)}

@@ -2,8 +2,9 @@
 
 A premium, Netflix-inspired cinematic memory site. Black UI, cinematic lighting,
 glassmorphism, and 60fps Framer Motion animation throughout — an original
-intro and profile-select experience leading into four immersive memory
-sections.
+intro and blob-avatar profile picker leading into four Netflix title-page-style
+memory sections (full-bleed hero, Play/My List, episode list, horizontal
+scroll rows, stats, and more).
 
 ## Stack
 
@@ -31,10 +32,13 @@ npm run preview # preview the production build locally
 src/
   components/
     intro/        cinematic intro (light flash, logo reveal)
-    profiles/      profile-select grid + cinematic zoom transition
-    shared/         reusable placeholder-aware primitives (image, video,
-                     timeline, galleries, quote cards, loading, particles...)
+    profiles/      blob-avatar profile grid + cinematic zoom transition
+    shared/         reusable placeholder-aware primitives — TopNav,
+                     HeroTitleCard, EpisodeList, ScrollRow, PhotoRowCard,
+                     VideoRowCard, MyListButton, StatBar, QuoteCard,
+                     PlaceholderImage/Video, LoadingScreen, particles...
     sections/       theme-specific components per memory section
+                     (e.g. Random BS's PopQuiz, SideQuest's QuestPath)
   pages/            one page per route (Home + 4 sections)
   data/             all copy + media paths, per section — edit these to
                      change content without touching components

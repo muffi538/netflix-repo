@@ -1,19 +1,28 @@
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 
-export default function FloatingStickers({ stickers }: { stickers: string[] }) {
+interface FloatingStickersProps {
+  stickers: string[];
+  avoidBottomLeft?: boolean;
+}
+
+export default function FloatingStickers({ stickers, avoidBottomLeft = false }: FloatingStickersProps) {
   const items = useMemo(
     () =>
-      stickers.map((s, i) => ({
-        emoji: s,
-        id: i,
-        top: 10 + Math.random() * 80,
-        left: Math.random() * 100,
-        size: 24 + Math.random() * 24,
-        duration: 5 + Math.random() * 4,
-        delay: Math.random() * 3,
-      })),
-    [stickers]
+      stickers.map((s, i) => {
+        const top = avoidBottomLeft ? 4 + Math.random() * 48 : 10 + Math.random() * 80;
+        const left = avoidBottomLeft ? 45 + Math.random() * 55 : Math.random() * 100;
+        return {
+          emoji: s,
+          id: i,
+          top,
+          left,
+          size: 24 + Math.random() * 24,
+          duration: 5 + Math.random() * 4,
+          delay: Math.random() * 3,
+        };
+      }),
+    [stickers, avoidBottomLeft]
   );
 
   return (

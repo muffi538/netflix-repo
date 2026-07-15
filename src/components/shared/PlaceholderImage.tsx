@@ -11,6 +11,8 @@ interface PlaceholderImageProps {
   label?: string;
   accent?: string;
   priority?: boolean;
+  hideIcon?: boolean;
+  placeholderBackground?: string;
 }
 
 const ImageIcon = () => (
@@ -29,6 +31,8 @@ export default function PlaceholderImage({
   label,
   accent = "#e50914",
   priority = false,
+  hideIcon = false,
+  placeholderBackground,
 }: PlaceholderImageProps) {
   const { ref, inView } = useInView<HTMLDivElement>();
   const [loaded, setLoaded] = useState(false);
@@ -41,10 +45,10 @@ export default function PlaceholderImage({
       <div
         className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-white/30"
         style={{
-          background: `linear-gradient(135deg, #141414 0%, #0a0a0a 60%, ${accent}14 100%)`,
+          background: placeholderBackground ?? `linear-gradient(135deg, #141414 0%, #0a0a0a 60%, ${accent}14 100%)`,
         }}
       >
-        <ImageIcon />
+        {!hideIcon && <ImageIcon />}
         {label && <span className="text-[11px] tracking-widest uppercase text-white/25 px-4 text-center">{label}</span>}
         <div className="absolute inset-0 shimmer-sheen" />
       </div>

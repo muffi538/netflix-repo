@@ -21,31 +21,31 @@ const ProfileCard = forwardRef<HTMLButtonElement, ProfileCardProps>(({ profile, 
         ref={ref}
         onClick={(e) => onSelect(profile, e.currentTarget)}
         style={{ animationDelay: `${index * 0.4}s` }}
-        className="relative aspect-[2/3] w-[38vw] sm:w-[24vw] md:w-[18vw] max-w-[220px] min-w-[120px] rounded-2xl overflow-hidden group animate-float-slow outline-none"
-        whileHover={{ scale: 1.08, y: -10 }}
-        whileTap={{ scale: 0.97 }}
+        className="relative aspect-square w-[30vw] sm:w-[18vw] md:w-[13vw] max-w-[170px] min-w-[96px] rounded-[26%] overflow-hidden group animate-float-slow outline-none"
+        whileHover={{ scale: 1.1, y: -10 }}
+        whileTap={{ scale: 0.96 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
         <div
-          className="absolute inset-0 rounded-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"
-          style={{ boxShadow: `0 0 50px 6px ${profile.accentSoft}` }}
+          className="absolute -inset-2 rounded-[30%] transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 blur-xl"
+          style={{ backgroundColor: profile.accentSoft }}
         />
 
         <PlaceholderImage
           src={profile.image}
           alt={profile.name}
           accent={profile.accent}
-          className="absolute inset-0 w-full h-full rounded-2xl border border-white/10 group-hover:border-white/30 transition-colors"
+          hideIcon
+          placeholderBackground={`linear-gradient(155deg, ${profile.accent} 0%, ${profile.accent}cc 55%, #000 140%)`}
+          className="absolute inset-0 w-full h-full rounded-[26%] ring-1 ring-white/15 group-hover:ring-white/40 transition-all"
         />
 
         <div
-          className="absolute inset-0 flex items-center justify-center text-6xl md:text-7xl pointer-events-none"
-          style={{ filter: `drop-shadow(0 0 24px ${profile.accentSoft})` }}
+          className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl pointer-events-none"
+          style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.35))" }}
         >
           {profile.emoji}
         </div>
-
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/70 to-transparent" />
       </motion.button>
 
       <div className="text-center">
