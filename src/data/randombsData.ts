@@ -45,4 +45,5 @@ export const stickers = ["💀", "😭", "🔥", "🤡", "✨", "😩", "🫠", 
 export const randombsVideos: VideoItem[] = [
   { id: "rv-1", src: "/media/randombs/videos/clip-1.mp4", poster: "/media/randombs/photos/video-poster-1.jpg", caption: "don't ask" },
   { id: "rv-2", src: "/media/randombs/videos/clip-2.mp4", poster: "/media/randombs/photos/video-poster-2.jpg", caption: "the reenactment" },
+  { id: "rv-3", src: "/media/randombs/videos/clip-3.mp4", poster: "/media/randombs/photos/video-poster-3.jpg", caption: "peak chaos, no context" },
 ];
