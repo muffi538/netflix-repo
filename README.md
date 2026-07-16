@@ -2,7 +2,7 @@
 
 A premium, Netflix-inspired cinematic memory site. Black UI, cinematic lighting,
 glassmorphism, and 60fps Framer Motion animation throughout — an original
-intro and blob-avatar profile picker leading into four Netflix title-page-style
+intro and blob-avatar profile picker leading into Netflix title-page-style
 memory sections (full-bleed hero, Play/My List, episode list, horizontal
 scroll rows, stats, and more).
 
@@ -38,8 +38,8 @@ src/
                      VideoRowCard, MyListButton, StatBar, QuoteCard,
                      PlaceholderImage/Video, LoadingScreen, particles...
     sections/       theme-specific components per memory section
-                     (e.g. Random BS's PopQuiz, SideQuest's QuestPath)
-  pages/            one page per route (Home + 4 sections)
+                     (e.g. Random BS's PopQuiz)
+  pages/            one page per route (Home + memory sections)
   data/             all copy + media paths, per section — edit these to
                      change content without touching components
 public/

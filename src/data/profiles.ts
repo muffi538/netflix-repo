@@ -21,16 +21,6 @@ export const profiles: Profile[] = [
     tagline: "Happy. Colorful. Nostalgic.",
   },
   {
-    id: "sidequest",
-    name: "SideQuest",
-    emoji: "🌍",
-    path: "/sidequest",
-    image: "/media/profiles/sidequest.jpg",
-    accent: "#2dd4bf",
-    accentSoft: "rgba(45, 212, 191, 0.35)",
-    tagline: "Every detour worth taking.",
-  },
-  {
     id: "randombs",
     name: "Random BS",
     emoji: "😂",

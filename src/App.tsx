@@ -6,7 +6,6 @@ import LoadingScreen from "@/components/shared/LoadingScreen";
 import HomePage from "@/pages/HomePage";
 
 const BirthdayPage = lazy(() => import("@/pages/BirthdayPage"));
-const SideQuestPage = lazy(() => import("@/pages/SideQuestPage"));
 const RandomBSPage = lazy(() => import("@/pages/RandomBSPage"));
 const MissYouPage = lazy(() => import("@/pages/MissYouPage"));
 
@@ -23,14 +22,6 @@ export default function App() {
             element={
               <PageTransition>
                 <BirthdayPage />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="/sidequest"
-            element={
-              <PageTransition>
-                <SideQuestPage />
               </PageTransition>
             }
           />
