@@ -2,6 +2,7 @@ import type { GalleryItem, MemeCard, VideoItem, StatItem, QuizQuestion } from ".
 
 export const randombsHero = {
   image: "/media/randombs/photos/hero.jpg",
+  video: "/media/randombs/videos/clip-3.mp4",
   eyebrow: "Memory Series",
   title: "Random BS",
   subtitle: "Chaotic. Unfiltered. Absolutely no context needed.",

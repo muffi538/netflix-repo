@@ -41,6 +41,7 @@ export default function RandomBSPage() {
           featuring={randombsHero.featuring}
           badges={randombsHero.badges}
           image={randombsHero.image}
+          video={randombsHero.video}
           accent={ACCENT}
         />
         <FloatingStickers stickers={stickers} avoidBottomLeft />
