@@ -18,7 +18,6 @@ image icon.
 
 - `photos/hero.jpg` — hero background image (used behind the hero video)
 - `videos/hero.mp4` — hero background video
-- `videos/clip-1.mp4` … `clip-3.mp4` + matching `photos/video-poster-1.jpg` … `video-poster-3.jpg` — video gallery
 
 ## Random BS — `/public/media/randombs/`
 
