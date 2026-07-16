@@ -24,9 +24,6 @@ image icon.
 ## SideQuest — `/public/media/sidequest/`
 
 - `photos/hero.jpg` — hero background image
-- `photos/timeline-1.jpg` … `timeline-4.jpg` — timeline entries
-- `photos/travel-1.jpg` … `travel-4.jpg` — travel cards
-- `photos/polaroid-1.jpg` … `polaroid-6.jpg` — polaroid gallery
 - `videos/clip-1.mp4`, `clip-2.mp4` + posters — video gallery
 
 ## Random BS — `/public/media/randombs/`

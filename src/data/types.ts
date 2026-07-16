@@ -26,14 +26,6 @@ export interface QuoteItem {
   author?: string;
 }
 
-export interface TravelCard {
-  id: string;
-  place: string;
-  date: string;
-  description: string;
-  image: string;
-}
-
 export interface MemeCard {
   id: string;
   image: string;
